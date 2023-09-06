@@ -1,5 +1,7 @@
-﻿Namespace BookmarkInsertLR
-    Partial Public Class Form1
+Namespace BookmarkInsertLR
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -62,6 +64,7 @@
             Me.btnBetween.TabIndex = 2
             Me.btnBetween.Text = "Between"
             Me.btnBetween.UseVisualStyleBackColor = True
+            AddHandler Me.btnBetween.Click, New System.EventHandler(AddressOf Me.btnBetween_Click)
             ' 
             ' btnRight
             ' 
@@ -71,6 +74,7 @@
             Me.btnRight.TabIndex = 1
             Me.btnRight.Text = "Right"
             Me.btnRight.UseVisualStyleBackColor = True
+            AddHandler Me.btnRight.Click, New System.EventHandler(AddressOf Me.btnRight_Click)
             ' 
             ' btnLeft
             ' 
@@ -80,6 +84,7 @@
             Me.btnLeft.TabIndex = 0
             Me.btnLeft.Text = "Left"
             Me.btnLeft.UseVisualStyleBackColor = True
+            AddHandler Me.btnLeft.Click, New System.EventHandler(AddressOf Me.btnLeft_Click)
             ' 
             ' cbBookmarks
             ' 
@@ -88,6 +93,7 @@
             Me.cbBookmarks.Name = "cbBookmarks"
             Me.cbBookmarks.Size = New System.Drawing.Size(121, 21)
             Me.cbBookmarks.TabIndex = 3
+            AddHandler Me.cbBookmarks.SelectedValueChanged, New System.EventHandler(AddressOf Me.cbBookmarks_SelectedValueChanged)
             ' 
             ' Form1
             ' 
@@ -98,19 +104,22 @@
             Me.Controls.Add(Me.panel1)
             Me.Name = "Form1"
             Me.Text = "Form1"
+            AddHandler Me.Load, New System.EventHandler(AddressOf Me.Form1_Load)
             Me.panel1.ResumeLayout(False)
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+#End Region
         Private richEditControl1 As DevExpress.XtraRichEdit.RichEditControl
+
         Private panel1 As System.Windows.Forms.Panel
-        Private WithEvents btnBetween As System.Windows.Forms.Button
-        Private WithEvents btnRight As System.Windows.Forms.Button
-        Private WithEvents btnLeft As System.Windows.Forms.Button
-        Private WithEvents cbBookmarks As System.Windows.Forms.ComboBox
+
+        Private btnBetween As System.Windows.Forms.Button
+
+        Private btnRight As System.Windows.Forms.Button
+
+        Private btnLeft As System.Windows.Forms.Button
+
+        Private cbBookmarks As System.Windows.Forms.ComboBox
     End Class
 End Namespace
-
